@@ -18,6 +18,7 @@ class HerbController extends BaseController
                 ->select('herb.name')
                 ->where('herb.name','like',"%$search%")
                 ->orwhere('pharm_properties.name','like',"%$search%")
+                ->distinct()
                 ->get();
 
 
